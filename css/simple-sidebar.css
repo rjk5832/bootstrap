@@ -90,7 +90,7 @@ body {
 }
 
 .sidebar-nav>.sidebar-brand a {
-  color: #999999;
+  color: #ffd3d3;
 }
 
 .sidebar-nav>.sidebar-brand a:hover {
@@ -120,3 +120,20 @@ body {
     margin-right: 0;
   }
 }
+
+
+#menu-toggle {
+  color: #fff;
+  background-color: #ff4444;
+  border-color: #ff4444;
+  position: fixed;
+  top: 20px;
+  right: 30px;
+}
+#menu-toggle:hover {
+  color: #fff;
+  background-color: #ff8c8c;
+  border-color: #ff8c8c;
+}
+#menu-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255,198,198,.5);
