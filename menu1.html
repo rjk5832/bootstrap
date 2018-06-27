@@ -72,16 +72,19 @@
               <a href="#code-toggle" class="btn" id="code-toggle">추가옵션코드</a>
               <!-- <div id="code_button" style="font-size: 30px; color : #e83e8c; font-weight: bold;"></div> -->
               <div id="code" class="hidden"  style="box-sizing: border-box; margin: 10px 0; padding: 10px; border : 1px solid #0056b3;
-              color : #0056b3; width : 300px;">
-                var view = new google.visualization.DataView(data);<br/>
-                view.setColumns([0, 1,<br/>
-                  { calc: "stringify",<br/>
-                  sourceColumn: 1,<br/>
-                  type: "string",<br/>
-                  role: "annotation" },<br/>
-                  2]);<br/><br/>
+              color : #0056b3; width : 600px;">
+                <pre style="padding: 10px;">
 
-                  <p style="font-size:13px;">setColumns([칼럼의 인덱스번호])를 통해 지정 칼럼만 노출, 상세설정 가능.</p>
+var view = new google.visualization.DataView(data);
+view.setColumns([0, 1,
+  { calc: "stringify",
+  sourceColumn: 1,
+  type: "string",
+  role: "annotation" },
+  2]);
+                </pre>
+
+                  <p style="font-size:13px; padding: 10px;">setColumns([칼럼의 인덱스번호])를 통해 지정 칼럼만 노출, 상세설정 가능.</p>
               </div>
 
             </div>

@@ -14,7 +14,17 @@
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
+    <style>
+      #columnchart_material{
+        padding : 15px;
+      }
 
+      .hidden{
+        display: none;
+      }
+
+
+    </style>
 </head>
 
 
@@ -49,9 +59,68 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <h1>menu2 page</h1>
-                <h4>this page is menu2.html</h4>
+                <h1>WEB CACHE</h1>
+                <h4>WebCache > Browser Caches</h4>
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Menu Button</a>
+            </div>
+            <div class="container-fluid">
+<pre>
+
+<b>웹캐쉬</b>
+
+웹캐쉬란 client가 요청하는 html, image, js, css등에 대해 첫 요청 시에 파일을 내려받아
+특정 위치에 복사본을 저장하고 이후 동일한 URL의 Resource요청은 다시 내려받지 않고
+내부에 저장한 파일을 사용하여 더 빠르게 서비스하기 위한것이다.
+
+서버를 통해 내려 받는 양이 적어지니 응답 시간이 감소하고 네트워크 트래픽이 감소되니
+server 와 client모두가 win-win할 수 있는 최고의 tradeoff인 셈.
+
+변경이 많은 페이지에서는 캐싱 파일로 인해 변경이 반영되어 보이지 않을 수 있으니
+사이트의 특성에 맞는 캐싱 설정이 필요하다.
+</pre>
+
+
+
+<a href="#code-toggle" class="btn" id="code-toggle">해결방안</a>
+<!-- <div id="code_button" style="font-size: 30px; color : #e83e8c; font-weight: bold;"></div> -->
+<div id="code" class="hidden"  style="box-sizing: border-box; margin: 10px 0; padding: 10px; border : 1px solid #0056b3;
+color : #0056b3;">
+  <pre style="padding: 10px;">
+<b>별도의 옵션설정 없이 해결하는 방법</b>
+
+1. Ctrl+F5
+  입력할경우 캐싱된 파일들을 날리고 새로 받는다.
+
+2. 인터넷 설정에서 임시인터넷 파일 설정을 웹 페이지를 열 때마다로 변경한다.
+
+
+<b>캐싱 옵션을 변경하는 방법</b>
+
+1. Meta tag
+  &lt;meta http-equiv="pragma" content="no-cache"/&gt;
+  &lt;meta http-equiv="pragma" content="no-store"/&gt;
+  &lt;meta http-equiv="cache-control" content="no-cache"/&gt;
+  &lt;meta http-equiv="Expires" content="-1"/&gt;
+  동작하지 않는 경우가 있기에 하단의 방법을 쓴다.
+
+2.Page_Load 내에 Header추가 코드 삽입
+  Response.AddHeader("pragma", "no-cache");
+  Response.AddHeader("pragma", "no-store");
+  Response.AddHeader("cache-control", "no-cache");
+  Response.AddHeader("Exipres", DateTime.Now.AddDays(-1).ToShortDateString());
+
+  HTTP Header
+  Cache-Control(REQUEST/RESPONSE) HTTP 1.1
+  Pragma(REQUEST)/Expires(RESPONSE)HTTP 1.0
+  두 설정이 공존할경우 하위 설정은 동작하지않는다.
+  </pre>
+    <p style="font-size:13px; padding: 10px;">Header설정시 지시자 no-cache/no-store 등이 사용됨</p>
+</div>
+<pre>
+
+참고페이지
+<small><a href="http://cyberx.tistory.com/9">[더 빠른 웹을 위하여]</a>  <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#defining-optimal-cache-control-policy">[HTTP캐싱]</a>  <a href="http://maen2001.tistory.com/17">[임시 인터넷 파일캐싱을 위한 방지]</a></small>
+</pre>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
@@ -68,6 +137,11 @@
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+    });
+
+    $("#code-toggle").click(function(e) {
+      e.preventDefault();
+      $("#code").toggleClass("hidden");
     });
     </script>
 
