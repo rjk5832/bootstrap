@@ -14,6 +14,11 @@
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
+    <style>
+      .hidden{
+        display: none;
+      }
+    </style>
 
 </head>
 
@@ -31,13 +36,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://rjk5832.github.io/bootstrap/menu1.html">menu1</a>
+                    <a href="https://rjk5832.github.io/bootstrap/menu1.html">Google Chart</a>
                 </li>
                 <li>
-                    <a href="https://rjk5832.github.io/bootstrap/menu2.html">menu2</a>
+                    <a href="https://rjk5832.github.io/bootstrap/menu2.html">Web Cache</a>
                 </li>
                 <li>
-                    <a href="https://rjk5832.github.io/bootstrap/menu3.html">menu3</a>
+                    <a href="https://rjk5832.github.io/bootstrap/menu3.html">HTTP Header</a>
                 </li>
                 <li>
                     <a href="https://rjk5832.github.io/bootstrap/menu4.html">menu4</a>
@@ -49,9 +54,196 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <h1>menu3 page</h1>
-                <h4>this page is menu3.html</h4>
+                <h1>HTTP / Header</h1>
+                <h5>사용자와 서버 사이에 이루어지는 요청/응답(Request/Response)프로토콜 HTTP</h5>
+                <h5>클라이언트와 서버 사이에서 모든 종류의 정보를 전송하는데 이용되는 HTTP Header</h5>
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Menu Button</a>
+            </div>
+            <div class="container-fluid">
+
+              <!-- 본문 1 -->
+              <a href="#code-toggle" class="btn" id="code-toggle">HTTP</a>
+              <!-- <div id="code_button" style="font-size: 30px; color : #e83e8c; font-weight: bold;"></div> -->
+              <div id="code" class="hidden"  style="box-sizing: border-box; margin: 10px 0; padding: 10px; border : 1px solid #0056b3;
+              color : #0056b3;">
+  <pre style="padding: 10px;">
+<b>HTTP란?</b>
+WWW에서 정보를 주고 받을 때 사용되는 규약(프로토콜) 이며 80번 포트를 사용한다.
+
+<b>HTTP의 특징</b>
+1.TCP 기반의 통신방식(3-way handshake)
+2.비연결 지향
+3.단방향성
+4.평문전송
+
+<hr>
+<b>HTTP Request의 구조</b>
+·메소드 : 사용자가 서버에 요청하는 메소드와 HTTP의 버전을 확인할 수 있다.
+·요청헤더 : 서버에 전달하는 사용자의 정보(처리 가능한 파일의 종류와 문자코드, 언어 등)을 나타낸다.
+·공백부분 : HTTP의 요청 헤더 부분과 본문 부분을 구분하기 위한 공백이다.
+·본문 : 메시지의 내용을 담고 있는 부분이다. GET메소드인 경우에는 요청 정보가 URL에 포함되어 전송되며, 메시지본문을 사용하지 않으므로 비어있게 된다.
+
+<small>[HTTP Request 메소드의 종류와 특징]</small>
+<table class="table table-sm" style="width : 800px; text-align: center;">
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>특징</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HEAD</td>
+      <td>HTTP헤더의 정보만을 수신하여 웹 서버의 정보를 확인한다.</td>
+    </tr>
+    <tr>
+      <td>TRACE</td>
+      <td>웹서버에 요청한 내용을 다시 사용자에게 되돌려주는(루프백) 역할을 한다.</td>
+    </tr>
+    <tr>
+      <td>PUT</td>
+      <td>웹 서버의 자원을 생성한다.</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>웹 서버의 자원을 삭제한다.</td>
+    </tr>
+    <tr>
+      <td>CONNECT</td>
+      <td>웹 서버에 프록시 포트를 요청하여 다른 포트를 사용한다.</td>
+    </tr>
+    <tr>
+      <td>OPTIONS</td>
+      <td>웹 서버가 지원하는 메소드의 종류를 확인한다.</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td rowspan="2" style="vertical-align: middle;">웹 서버에 자원을 요청한다.</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+    </tr>
+  </tbody>
+</table>
+<small>[GET과 POST메소드의 차이]]</small>
+<table class="table table-sm" style="width : 800px; text-align: center;">
+  <thead>
+    <tr>
+      <th></th>
+      <th>GET</th>
+      <th>POST</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>전송방식</td>
+      <td>데이터를 URL에 포함하여 전송</td>
+      <td>메시지본문에 데이터를 첨부하여 전송</td>
+    </tr>
+    <tr>
+      <td>데이터양의 한계</td>
+      <td>4096byte(4KB) = 255자</td>
+      <td>제한없음</td>
+    </tr>
+    <tr>
+      <td>데이터타입</td>
+      <td>ASC∥ 형태만 허용</td>
+      <td>제한없음</td>
+    </tr>
+    <tr>
+      <td>속도</td>
+      <td>빠르다</td>
+      <td>느리다</td>
+    </tr>
+    <tr>
+      <td>결론</td>
+      <td>서버에서 데이터를 "불러오는것"</td>
+      <td>서버의 데이터를 "수정하는것"</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<b>HTTP Response의 구조</b>
+·상태코드 : 사용자의 요청에 대한 서버의 처리결과를 나타낸다.
+·응답헤더 : 사용자에게 전달한 데이터의 정보를 나타내는 부분이다.
+·공백부분 : HTTP의 응답헤더 부분과 본문 부분을 구분하기 위한 공백이다.
+·본문 : 사용자에게 전달한 데이터의 내용을 담고있는 부분이다.
+
+<small>[HTTP Response 상태코드]</small>
+<table class="table table-sm" style="width : 800px; text-align: center;">
+  <thead>
+    <tr>
+      <th>코드 클래스</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>100~199</td>
+      <td>사용자의 요청이 현재 처리되고 있음을 의미한다.</td>
+    </tr>
+    <tr>
+      <td>200~299</td>
+      <td>서버가 사용자의 요청에 대해 성공적으로 처리했음을 의미한다.</td>
+    </tr>
+    <tr>
+      <td>300~399</td>
+      <td>사용자가 요청을 마치기 위해 추가 동작을 해야 함을 의미한다.</td>
+    </tr>
+    <tr>
+      <td>400~499</td>
+      <td>사용자측의 에러가 밸생했음을 의미한다.</td>
+    </tr>
+    <tr>
+      <td>500~599</td>
+      <td>서버 측 에러가 발생했음을 의미한다.</td>
+    </tr>
+  </tbody>
+</table>
+<small>[HTTP 중요 상태코드]</small>
+<table class="table table-sm" style="width : 800px; text-align: center;">
+  <thead>
+    <tr>
+      <th>코드</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HTTP 200</td>
+      <td>서버가 사용자의 요청을 정상적으로 처리했음을 의미한다.</td>
+    </tr>
+    <tr>
+      <td>HTTP 400</td>
+      <td>사용자의 요청을 서버가 제대로 인식하지 못했을 경우를 의미한다.</td>
+    </tr>
+    <tr>
+      <td>HTTP 401</td>
+      <td>사용자가 서버의 자원을 요청할 권한이 없음을 의미한다.</td>
+    </tr>
+    <tr>
+      <td>HTTP 403</td>
+      <td>서버가 사용자의 요청을 거부하고 있음을 의미한다.</td>
+    </tr>
+    <tr>
+      <td>HTTP 404</td>
+      <td>사용자가 서버에 존재하지 않는 페이지에 대해 요청할 경우를 의미한다.</td>
+    </tr>
+    <tr>
+      <td>HTTP 500</td>
+      <td>서버에 오류가 발생하여 요청을 수행할 수 없음을 의미한다.</td>
+    </tr>
+  </tbody>
+</table>
+</pre>  
+  <p style="font-size:13px; padding: 10px;">Header설정시 지시자 no-cache/no-store 등이 사용됨</p>
+              </div>
+
+<pre>
+
+참고페이지
+<small><a href="http://wooeong.tistory.com/entry/HTTP%EB%9E%80">[HTTP 란?]</a>  <a href="http://smilekey.blogspot.com/2009/09/http-header-%EC%A0%95%EB%A6%AC.html">[Http Header 정리]</a></small>
+</pre>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
@@ -68,6 +260,12 @@
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+    });
+
+
+    $("#code-toggle").click(function(e) {
+      e.preventDefault();
+      $("#code").toggleClass("hidden");
     });
     </script>
 
