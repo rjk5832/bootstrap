@@ -62,9 +62,9 @@
             <div class="container-fluid">
 
               <!-- 본문 1 -->
-              <a href="#code-toggle" class="btn" id="code-toggle">HTTP</a>
+              <a href="#code-toggle" class="btn" id="http-toggle">HTTP</a>
               <!-- <div id="code_button" style="font-size: 30px; color : #e83e8c; font-weight: bold;"></div> -->
-              <div id="code" class="hidden"  style="box-sizing: border-box; margin: 10px 0; padding: 10px; border : 1px solid #0056b3;
+              <div id="http" class="hidden"  style="box-sizing: border-box; margin: 10px 0; padding: 10px; border : 1px solid #0056b3;
               color : #0056b3;">
   <pre style="padding: 10px;">
 <b>HTTP란?</b>
@@ -235,8 +235,28 @@ WWW에서 정보를 주고 받을 때 사용되는 규약(프로토콜) 이며 8
     </tr>
   </tbody>
 </table>
-</pre>  
-  <p style="font-size:13px; padding: 10px;">Header설정시 지시자 no-cache/no-store 등이 사용됨</p>
+</pre>
+              </div>
+<br/>
+              <!-- 본문 2 -->
+              <a href="#code-toggle" class="btn" id="http-header-toggle">HTTP Header</a>
+              <!-- <div id="code_button" style="font-size: 30px; color : #e83e8c; font-weight: bold;"></div> -->
+              <div id="http-header" class="hidden"  style="box-sizing: border-box; margin: 10px 0; padding: 10px; border : 1px solid #0056b3;
+              color : #0056b3;">
+  <pre style="padding: 10px;">
+<b>HTTP Header란?</b>
+HTTP 헤더는 클라이언트와 서버 사이에서 모든 종류의 정보를 전송하는데 이용되며 크게 4가지로 분류할 수 있다.
+
+·General : 클라이언트, 서버 또는 HTTP와 관계된 정보
+·Request : 문서 양식과 서버의 매개 변수들
+·Response : 응답을 보내는 서버에 대한 정보
+·Entitiy : 클라이언트와 서버 사이에 전송되는 데이터에 대한 정보
+
+HTTP메시지에 있는 모든 헤더는 헤더 이름을 포함하여 콜론, 공백, 헤더의 값 순으로 구성된다.
+헤더 이름은 대소문자를 구별하지 않는다.
+또한 헤더의 값은 적어도 하나의 공백이나 탭 문자를 각행에 붙임으로써 여러 줄로 확장하여 쓸 수 있다.</pre>
+<hr/>
+<p style="font-size:13px; padding: 10px;">일반 헤더와 ENTITY헤더는 서버와 클라이언트 모두 동일하다.</p>
               </div>
 
 <pre>
@@ -263,10 +283,16 @@ WWW에서 정보를 주고 받을 때 사용되는 규약(프로토콜) 이며 8
     });
 
 
-    $("#code-toggle").click(function(e) {
+    $("#http-toggle").click(function(e) {
       e.preventDefault();
-      $("#code").toggleClass("hidden");
+      $("#http").toggleClass("hidden");
     });
+
+    $("#http-header-toggle").click(function(e) {
+      e.preventDefault();
+      $("#http-header").toggleClass("hidden");
+    });
+
     </script>
 
 </body>
