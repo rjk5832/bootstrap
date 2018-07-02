@@ -14,6 +14,12 @@
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
+    <style>
+      .hidden{
+        display: none;
+      }
+
+    </style>
 
 </head>
 
@@ -40,7 +46,7 @@
                     <a href="https://rjk5832.github.io/bootstrap/menu3.html">HTTP Header</a>
                 </li>
                 <li>
-                    <a href="https://rjk5832.github.io/bootstrap/menu4.html">menu4</a>
+                    <a href="https://rjk5832.github.io/bootstrap/menu4.html">CentOS</a>
                 </li>
             </ul>
         </div>
@@ -49,9 +55,98 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <h1>menu4 page</h1>
-                <h4>this page is menu4.html</h4>
+                <h1>Linux</h1>
+                <h4>centOS</h4>
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Menu Button</a>
+            </div>
+            <div style="margin-left:15px;">
+              <a href="#code-toggle" class="btn" id="code1-toggle">VirtualBox에 centOS설치</a>
+              <!-- <div id="code_button" style="font-size: 30px; color : #e83e8c; font-weight: bold;"></div> -->
+              <div id="code1" class="hidden"  style="box-sizing: border-box; margin: 10px 0; padding: 10px; border : 1px solid #0056b3;
+              color : #0056b3; width : 600px;">
+<pre style="padding: 10px;">
+참고페이지
+<small><a href="https://blog.lael.be/post/1721">[한번에 끝내는 CentOS 웹서버세팅]</a>  <a href="https://zetawiki.com/wiki/VirtualBox%EC%97%90_CentOS_7_%EC%84%A4%EC%B9%98">[VirtualBox에 CentOS 7 설치]</a>  <a href="https://horyu1234.com/develop/1596">[CentOS7 PHP7설치하기]</a></small>
+</pre>
+              </div><br/>
+              <a href="#code-toggle" class="btn" id="code2-toggle">CentOS 단축키</a>
+              <!-- <div id="code_button" style="font-size: 30px; color : #e83e8c; font-weight: bold;"></div> -->
+              <div id="code2" class="hidden"  style="box-sizing: border-box; margin: 10px 0; padding: 10px; border : 1px solid #0056b3;
+              color : #0056b3; width : 1200px;">
+<pre style="padding: 10px;">
+<small>[파일관련 명령어]</small>
+<table class="table">
+<thead>
+  <tr>
+    <th>명령어</th>
+    <th>설명</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>ls</td>
+    <td>리스트를 보여줌</td>
+  </tr>
+  <tr>
+    <td>ls -al</td>
+    <td>-a는 디렉토리내의 모든 파일을 의미하고,<br/>
+      -l 은  파일이나 디렉토리의 소유자 , 권한, 크기, 날짜 등에 대해서도 보여줌</td>
+  </tr>
+  <tr>
+    <td>touch</td>
+    <td>파일을 생성하는 명령어</td>
+  </tr>
+  <tr>
+    <td>pwd</td>
+    <td>현재 디렉토리의 위치를 보여준다.</td>
+  </tr>
+  <tr>
+    <td>cd</td>
+    <td>디렉토리를 바꾸어줌</td>
+  </tr>
+  <tr>
+    <td>mkdir</td>
+    <td>디렉토리 생성 (디렉토리를 생성하면 실행권한도 같이 생김)</td>
+  </tr>
+  <tr>
+    <td>mv</td>
+    <td>파일이나 디렉토리를 이동시키거나, 이름을 변경할 때 사용<br/>
+      mv test1 test2 (test1을 test2로 이동시킨다)</td>
+  </tr>
+  <tr>
+    <td>cp</td>
+    <td>파일 및 폴더 복사할 때 사용<br/>
+      파일복사:  cp test1.txt test2.txt (test2.txt파일을 복사해서 생성)<br/>
+      cp /opt/copy1 /home/copy2  (copy1을 home폴더의 copy2로 복사)<br/>
+      폴더복사: cp -r /opt /home/opt (-r옵션을 붙여서, 디렉토리를 이동함, opt디렉토리를 home디렉토리 밑으로 이동)</td>
+  </tr>
+  <tr>
+    <td>stat</td>
+    <td>파일의 변경상황 확인 가능</td>
+  </tr>
+  <tr>
+    <td>cat</td>
+    <td>파일의 내용을 보여줌<br/>
+      cat file | more  => 파일의 내용이 너무 많아지면, | more를 해주면 화면단위로 잘라주므로, 좌우 방향키로 넘겨 볼 수 있다.<br/>
+      (q를 누르면 나가게 된다.)</td>
+  </tr>
+  <tr>
+    <td>du</td>
+    <td>하드 사용량 체크</td>
+  </tr>
+  <tr>
+    <td>rm</td>
+    <td>파일삭제(백업이 존재하는지 확인하고 지우는 것이 좋음)<br/>
+      rm test.txt  => test.txt 파일 삭제<br/>
+      rm -r <디렉토리이름>  디렉토리 전체를 삭제<br/>
+      rm -rf <디렉토리 이름> f는 무조건 삭제한다는 옵션입니다.   (현재의 디렉토리에서 파일과 디렉토리를 모두 삭제한다면 rm -rf *을 해주면 됩니다.)</td>
+  </tr>
+</tbody>
+</table>
+참고페이지
+<small><a href="http://coding8.tistory.com/21">[자주쓰는 Linux명령어 단축키 정리]</a></small>
+</pre>
+              </div>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
@@ -68,6 +163,16 @@
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+    });
+
+    $("#code1-toggle").click(function(e) {
+      e.preventDefault();
+      $("#code1").toggleClass("hidden");
+    });
+
+    $("#code2-toggle").click(function(e) {
+      e.preventDefault();
+      $("#code2").toggleClass("hidden");
     });
     </script>
 
