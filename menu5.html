@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bootstrap test site</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <style>
+      .hidden{
+        display: none;
+      }
+
+      #code3 tr>th{
+        font-size : 18px;
+        font-weight: bold;
+      }
+
+      #code3 td>div{
+        width : 300px;
+        height: 30px;
+        margin : 0 auto;
+        color : #fff;
+        font-weight: bold;
+        font-size:
+      }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div id="wrapper" class="toggled">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="https://rjk5832.github.io/bootstrap/">
+                        Index Page
+                    </a>
+                </li>
+                <li>
+                    <a href="https://rjk5832.github.io/bootstrap/menu1.html">Google Chart</a>
+                </li>
+                <li>
+                    <a href="https://rjk5832.github.io/bootstrap/menu2.html">Web Cache</a>
+                </li>
+                <li>
+                    <a href="https://rjk5832.github.io/bootstrap/menu3.html">HTTP Header</a>
+                </li>
+                <li>
+                    <a href="https://rjk5832.github.io/bootstrap/menu4.html">CentOS</a>
+                </li>
+                <li>
+                    <a href="https://rjk5832.github.io/bootstrap/menu5.html">Docker</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>Docker <a href="https://www.docker.com/">●</a></h1>
+                <h4>World's leading SW containerization platform.</h4>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Menu Button</a>
+            </div>
+              <a href="#code-toggle" class="btn" id="code1-toggle">도커란?</a>
+              <!-- <div id="code_button" style="font-size: 30px; color : #e83e8c; font-weight: bold;"></div> -->
+              <div id="code1" class="hidden"  style="box-sizing: border-box; margin: 10px 0; padding: 10px; border : 1px solid #0056b3;
+              color : #0056b3; width : 1200px;">
+<pre>
+<span style="font-size : 18px;"><b>도커</b>는 2013년 3월 출시된 오픈소스 컨테이너 프로젝트이다.</span>
+기본적으로 "컨테이너"라고 부르는 애플리케이션 자동화 기술을 좀 더 쉽게 사용할 수 있도록 하기 위해 만들어졌다.
+초기에는 LXC(Linux X Container)를 기반으로 구현
+버전 0.9부터는 libcontainer를 개발하여 사용
+
+<b>특징</b>
+컨테이너 안에서도 호스트와 거의 동일한 성능
+별도의 OS 설치할 필요가 없음, 용량부담 ↓
+앱을 만들때 하드웨어가 달라져도 시스템설정 유지가능
+이미지를 설치하기 이전에는 내용 확인불가능 (보안상 취약점)
+개발환경을 구축하는데 걸리는 시간 단축
+격리된 환경을 활용해 실험적인 개발가능 + 비용절감
+</pre>
+              </div></br>
+              <a href="#code-toggle" class="btn" id="code2-toggle">이미지</a>
+              <!-- <div id="code_button" style="font-size: 30px; color : #e83e8c; font-weight: bold;"></div> -->
+              <div id="code2" class="hidden"  style="box-sizing: border-box; margin: 10px 0; padding: 10px; border : 1px solid #0056b3;
+              color : #0056b3; width : 1200px;">
+<pre>
+<b>이미지</b>는 서비스에 필요한 프로그램, 라이브러리, 소스 코드 등을 묶은 파일을 뜻한다.
+운영체제에 비유하면 이미지는 실행파일, 컨테이너는 프로세스.
+컨테이너로 구축한 환경을 오픈소스 저장소에 이미지로 배포하게되면
+타 유저가 해당 이미지를 다운로드받아 자신의 도커엔진으로 새로운 컨테이너를 구동할 수 있다.
+도커는 리눅스 환경에서만 구동되는데, 리눅스 터미널에서 도커 엔진을 통해 이미지를 검색한다.
+
+- 유니온 파일 시스템 형식 (aufs, btrfs, devicemapper)
+도커는 이미지의 바뀐 부분만을 이미지로 생성, 실행시 베이스 이미지와 합쳐서 실행한다.
+각 이미지는 의존 관계를 형성한다.
+</pre>
+              </div></br>
+              <a href="#code-toggle" class="btn" id="code3-toggle">Docker vs VM</a>
+              <!-- <div id="code_button" style="font-size: 30px; color : #e83e8c; font-weight: bold;"></div> -->
+              <div id="code3" class="hidden"  style="box-sizing: border-box; margin: 10px 0; padding: 10px; border : 1px solid #0056b3;
+              color : #0056b3; width : 1200px;">
+<pre>
+가상화기술은 하이퍼바이저라는 기술이 반드시 있어야한다.
+하이퍼바이저는 하나의 컴퓨터에서 여러개의 OS를 사용할 수 있게 도와주는 기술로
+가상화 환경은 가장 밑단에 깔린 호스트 OS를 공유한다.
+
+도커는 하이퍼바이저와 달리 게스트 OS를 두지않고 호스트 OS 커널(리눅스의 핵심요소)을 바로 사용한다.
+하이퍼바이저대신 도커 엔진이 올라가 호스트OS와 여러 애플리케이션을 연결해주는 역할을 한다.
+
+도커를 사용하면 가상화보다는 <b>내부에서 더 작은 일을 처리하고, 애플리케이션을 좀 더 빠르고 효율적으로 실행</b>시킬 수 있다.
+</pre>
+<table style="text-align : center; width : 800px;">
+  <thead>
+    <tr>
+      <th>가상머신</th>
+      <th>컨테이너</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><div style="background-color : #0070c0;">App</div></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><div style="background-color : #0070c0;">Bins/Libs</div></td>
+      <td><div style="background-color : #0070c0;">App</div></td>
+    </tr>
+    <tr>
+      <td><div style="background-color : #0070c0;">Guest OS</div></td>
+      <td><div style="background-color : #0070c0;">Bins/Libs</div></td>
+    </tr>
+    <tr>
+      <td><div style="background-color : #002060;">hypervisor</div></td>
+      <td><div style="background-color : #00b0f0;">도커 엔진</div></td>
+    </tr>
+    <tr>
+      <td><div style="background-color : #002060;">Host OS</div></td>
+      <td><div style="background-color : #002060;">Host OS</div></td>
+    </tr>
+    <tr>
+      <td><div style="background-color : #002060;">server</div></td>
+      <td><div style="background-color : #002060;">server</div></td>
+    </tr>
+    <tr>
+      <td>다양한 OS환경을 운영하는데 적합</td>
+      <td>단일 기종의 OS을 빠르게 생성/사용에 유리</td>
+    </tr>
+    <tr>
+      <td>한 하드웨어에서 여러버전의 리눅스를 쓸 수 있다.</td>
+      <td>특정 애플리케이션에 최적화</td>
+    </tr>
+  </tbody>
+</table>
+              </div>
+
+<pre style="padding: 10px;">
+참고페이지
+<small><a href="http://ssola22.tistory.com/12">[Docker:개발자들을 위한 클라우드 기술]</a><a href="https://www.slideshare.net/pyrasis/docker-fordummies-44424016">[도커 무작정 따라하기]</a></small>
+</pre>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
+    $("#code1-toggle").click(function(e) {
+      e.preventDefault();
+      $("#code1").toggleClass("hidden");
+    });
+
+    $("#code2-toggle").click(function(e) {
+      e.preventDefault();
+      $("#code2").toggleClass("hidden");
+    });
+
+    $("#code3-toggle").click(function(e) {
+      e.preventDefault();
+      $("#code3").toggleClass("hidden");
+    });
+    </script>
+
+</body>
+
+</html>
