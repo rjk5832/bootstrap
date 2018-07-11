@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ajax test</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- KaTex Start -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js" integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc" crossorigin="anonymous"></script>
+  <script>
+  	document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+  			delimiters: [
+  				{left: "$$", right: "$$", display: true},
+  				{left: "//[", right: "//]", display: true},
+  				{left: "//(", right: "//)", display: false}
+  			]
+  		});
+  	});
+  </script>
+  	<!-- KaTex End -->
+
+
+</head>
+<body>
+
+  <select id="resultSelect">
+    <option value="Y">성공JSON</option>
+    <option value="N">실패JSON</option>
+  </select>
+  <input type="button" id="searchButton" value="조회" />
+  <br/>
+  <div id="listLayout"></div>
+
+<p>테스트수식</p>
+<p>$$A \equiv B(modC)$$</p>
+
+</body>
+<script type="text/javascript">
+  $(function(){
+    $("#searchButton").click(function(){
+      var flag = $("#resultSelect").val();
+      //select box로 구분을 주었지만
+      //실질적으로는 내부로직에서 db조회하여 데이터가 있으면
+      //json 파싱하여 데이터 생성을 하고
+      //없으면 데이터 없음으로 파싱해야한다
+      if(flag == "Y") {
+        url = "/test/test/list1.json";
+      } else {
+        url = "/test/test/list2.json";
+      }
+      //비동기 통신을 하여 json타입으로 호출한다.
+      $.ajax({
+        url: url ,
+        dataType : 'json' ,
+        success: function(data) {
+          //result결과
+          //json객체의 flag가 Y이면 data라는 성공메시지를 result변수에 담는다.
+          if(data.flag == "Y"){
+            var result = data.data;
+            //json객체의 flag가 Y가아닌 그이후는 data라는 실패메시지를 result변수에 담는다.
+          } else {
+            var result = data.data;
+          }
+          //div태그에 html로 출력!!
+          $("#listLayout").html(data.data);
+        }
+      });
+    })
+  })
+
+</script>
+</html>

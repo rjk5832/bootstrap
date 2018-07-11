@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bootstrap test site</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <style>
+      #columnchart_material{
+        padding : 15px;
+      }
+
+      .hidden{
+        display: none;
+      }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div id="wrapper" class="toggled">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="https://rjk5832.github.io/bootstrap/">
+                        Top Page
+                    </a>
+                </li>
+                <li>
+                    <a href="./menu1.html">Google Chart</a>
+                </li>
+                <li>
+                    <a href="./menu2.html">Web Cache</a>
+                </li>
+                <li>
+                    <a href="./menu3.html">HTTP Header</a>
+                </li>
+                <li>
+                    <a href="./menu4.html">CentOS</a>
+                </li>
+                <li>
+                    <a href="./menu5.html">Docker</a>
+                </li>
+                <li>
+                    <a href="./menu6.html">Network</a>
+                </li>
+                <li>
+                    <a href="./menu7.html">Design Pattern</a>
+                </li>
+                <li>
+                    <a href="./menu8.html">Data Structure</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>Design Pattern</h1>
+                <h4>디자인 패턴</h4>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Menu Button</a>
+            </div>
+            <div class="container-fluid">
+
+<a href="#code-toggle" class="btn" id="code1-toggle">디자인패턴이란?</a>
+<!-- <div id="code_button" style="font-size: 30px; color : #e83e8c; font-weight: bold;"></div> -->
+<div id="code1" class="hidden"  style="box-sizing: border-box; margin: 10px 0; padding: 10px; border : 1px solid #0056b3;
+color : #0056b3;">
+<pre style="padding: 10px;">
+디자인 패턴(Design Pattern) 이란 방식을 통해 소프트웨어 설계에서 얻은 세세한 경험들을 기록해 놓도록 하는 것
+"특정한 전후 관계에서 일반적 설계 문제를 해결하기 위해 상호 교류하는 수정 가능한 객체와 클래스들에 대한 설명"
+
+패턴 "어떤 상황의 문제에 대한 해법" 일반적으로 하나의 패턴에는 다음의 네가지 요소가 반드시 들어가 있다
+
+1. 패턴 이름(pattern name)은 한두 단어로 설계 문제와 해법을 서술한다.
+2. 문제(problem)는 언제 패턴을 사용하는가를 서술하며 해결할 문제와 그 배경을 설명한다.
+3. 해법(solution)은 설계를 구성하는 요소들과 그 요소들 간의 관계 책임 그리고 협력 관계를 서술한다.
+4. 결과(consequence)는 디자인 패턴을 적용해서 얻는 결과와 장단점을 서술한다.
+</pre>
+</div><br/>
+<a href="#code-toggle" class="btn" id="code2-toggle">패턴의 분류</a>
+<!-- <div id="code_button" style="font-size: 30px; color : #e83e8c; font-weight: bold;"></div> -->
+<div id="code2" class="hidden"  style="box-sizing: border-box; margin: 10px 0; padding: 10px; border : 1px solid #0056b3;
+color : #0056b3;">
+<pre style="padding: 10px;">
+패턴의 분류 기준은 목적(purpose), 범위(scope)
+
+패턴은 생성,구조,행동중의 한 가지 <b>목적</b>을 갖는다.
+생성(creational) 패턴 - 객체의 생성 과정에 관여하는 패턴
+구조(structural) 패턴 - 클래스나 객체의 합성에 관한 패턴
+행동(behavioral) 패턴 - 클래스나 객체들이 상호작용하는 방법과 책임을 분산하는 방법을 정의하는 패턴
+
+<b>범위</b>는 패턴을 클래스에 적용하는지 아니면 객체에 적용하는지를 구분한다.
+클래스 패턴 - 클래스와 서브 클래스 간의 관련성을 다루는 패턴, 관련성은 주로 상속, 컴파일 타임에 정적으로 결정됨.
+객체 패턴 - 객체 관련성을 다루는 패턴으로서, 런타임에 변경할 수 있으며 더 동적인 성격을 가진다.
+
+<small>[패턴의 분류]</small>
+<table class="table">
+  <tr>
+    <th>범위＼목적</th>
+    <th>생성</th>
+    <th>구조</th>
+    <th>행동</th>
+  </tr>
+  <tr>
+    <td><b>클래스</b></td>
+    <td>Factory Method - 팩토리 메서드</td>
+    <td>Adapter - 어댑터(class)</td>
+    <td>Interpreter - 인터프리터
+Template Method - 템플릿 메서드</td>
+  </tr>
+  <tr>
+    <td><b>객체</b></td>
+    <td>Abstract Factory - 추상 팩토리
+Builder - 빌더
+Prototype - 프로토타입
+Singleton - 싱글톤</td>
+    <td>Adapter - 어댑터(object)
+Bridge - 브릿지
+Composite - 컴포짓
+Decorator - 데커레이터
+Facade - 퍼사드
+Flyweight - 플라이웨이
+Proxy - 프록시</td>
+    <td>Chain of Responsibility 책임 연쇄
+Command - 커맨드
+Iterator - 이터레이터
+Mediator - 중재자
+Memento - 메멘토
+Observer - 옵저버
+State - 상태
+Strategy - 전략
+Visitor - 비지터</td>
+  </tr>
+</table>
+생성(creational) "클래스" 패턴 - 객체를 생성하는 책임의 일부를 서브클래스가 담당하도록 넘김
+생성(creational) "객체" 패턴 - 이를 다른 객체에게 위임
+구조(structural) "클래스" 패턴 - 상속을 이용해서 클래스를 복합
+구조(structural) "객체" 패턴 - 객체를 합성하는 방법을 정의
+행동(behavioral) "클래스" 패턴 - 상속을 이용해서 알고리즘과 제어 흐름을 기술
+행동(behavioral) "객체" 패턴 - 하나의 작업을 수행하기 위해 객체 집합이 어떻게 협력하는 지를 기술
+
+<hr/>
+패턴을 조직하는 또 다른 방법은 패턴간의 참조관계에 따라 관리하는것이다.
+함께 사용해야함 / 다른 패턴의 대안으로 사용됨 / 의도는 다르지만 결과적으로 유사한 설계구조를 가짐 등의 관계가 존재한다.
+</pre>
+</div><br/>
+<pre>
+
+참고페이지
+<small><a href="https://wikidocs.net/book/55">[코드,패턴 그리고 소프트웨어]</a></small>
+</pre>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
+    $("#code1-toggle").click(function(e) {
+      e.preventDefault();
+      $("#code1").toggleClass("hidden");
+    });
+
+    $("#code2-toggle").click(function(e) {
+      e.preventDefault();
+      $("#code2").toggleClass("hidden");
+    });
+
+    </script>
+
+</body>
+</html>
